@@ -17,7 +17,7 @@ class PostController extends Controller
     private RecaptchaEnterpriseServiceClient $captchaClient;
 
     private array $credentials;
-    private string $siekey;
+    private string $sitekey;
 
     public function __construct()
     {
