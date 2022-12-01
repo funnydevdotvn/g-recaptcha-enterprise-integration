@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Client</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <form id="form_post" method="post" action="https://domain.com/server.php">
+            <input type="hidden" id="recaptcha_action" name="recaptcha_action" />
+            <input type="hidden" id="recaptcha_token" name="recaptcha_token" />
+            <label>
+                Write something here: <input type="text" name="post_name" />
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=your_google_recaptcha_enterprise_sitekey"></script>
+        <script>
+            grecaptcha.enterprise.ready(function() {
+                $('#form_post').on('submit', function(e) {
+                    e.preventDefault();
+                    let form = $('#form_post');
+                    let actionUrl = form.attr('action');
+                    grecaptcha.enterprise.execute('your_google_recaptcha_enterprise_sitekey', {action: 'form/some_name_here'}).then(function(token) {
+                        $('#recaptcha_action').val('form/some_name_here');
+                        $('#recaptcha_token').val(token);
+                        axios({
+                            method : 'POST',
+                            url: actionUrl,
+                            data: form.serialize(),
+                        })
+                            .then(function (response) {
+                                alert(response.data.message);
+                            });
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
