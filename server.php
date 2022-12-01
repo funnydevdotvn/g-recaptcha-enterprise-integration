@@ -18,7 +18,6 @@ class PostController extends Controller
 
     private array $credentials;
     private string $sitekey;
-
     public function __construct()
     {
         # Create a service account from https://console.cloud.google.com/iam-admin/serviceaccounts?project=your_project_id_here
