@@ -11,4 +11,4 @@ Why you should do this:
 
 Google ReCaptcha Enterprise: https://cloud.google.com/recaptcha-enterprise.
 
-We will regularly update the necessary data for this git. Join our Facebook group at https://funnydev.cc/mvYCT to learn & share for free.
+We will regularly update the necessary data for this git. Join our Facebook group at https://funnydev.cc/eoBIj to learn & share for free.
