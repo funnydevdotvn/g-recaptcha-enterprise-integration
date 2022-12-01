@@ -9,4 +9,6 @@ Why you should do this:
 * At least for now, as I know, no one even 2captcha or anti-captcha could solve Google Enterprise captcha.
 * This knowledge of coding in this git you will not find on Google Search or Google Documents, at least for now.
 
+Google ReCaptcha Enterprise: https://cloud.google.com/recaptcha-enterprise.
+
 We will regularly update the necessary data for this git. Join our Facebook group at https://funnydev.cc/mvYCT to learn & share for free.
