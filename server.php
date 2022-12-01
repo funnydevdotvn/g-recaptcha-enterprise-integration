@@ -60,7 +60,7 @@ class PostController extends Controller
             $assessment = (new Assessment())->setEvent($event);
             $response = $this->captchaClient->createAssessment($projectName, $assessment);
             if (! $response->getTokenProperties()->getValid()) {
-                # some thing like return 'Captcha verification failed';
+                # something like return 'Captcha verification failed';
             } else {
                 # You must set your action name in html frontend to verify if it matched to what users post to your backend
                 # It seems like $request->validate
@@ -80,19 +80,19 @@ class PostController extends Controller
                 $time = $response->getTokenProperties()->getCreateTime()->getSeconds();
                 $distance_time = Carbon::now()->diffInSeconds(gmdate("Y-m-d\TH:i:s\Z", $time));
                 if (($distance_time < $this->min_action_time) || ($distance_time > $this->max_action_time)) {
-                    # some thing like return 'Action too fast or too slow';
+                    # something like return 'Action too fast or too slow';
                 }
 
                 # Check if it matched action name, valid score and hostname
                 if (($action !== $form_action) || ($score < 0.6) || (! str_contains($hostname, 'your_domain_here'))) {
-                    # some thing like return 'Bot attack detected'
+                    # something like return 'Bot attack detected'
                 }
             }
-            # some thing like return 'Success passed captcha'
+            # something like return 'Success passed captcha'
         } catch (Throwable $e) {
-            # some thing like return $e->getMessage() if you want to debug
+            # something like return $e->getMessage() if you want to debug
         }
 
-        # some thing like return 'Success passed captcha'
+        # something like return 'Success passed captcha'
     }
 }
