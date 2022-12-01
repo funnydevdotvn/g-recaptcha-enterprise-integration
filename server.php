@@ -9,7 +9,6 @@ use Google\Cloud\RecaptchaEnterprise\V1\Assessment;
 use Google\Cloud\RecaptchaEnterprise\V1\Event;
 use Google\Cloud\RecaptchaEnterprise\V1\RecaptchaEnterpriseServiceClient;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Lang;
 use Throwable;
 
 class PostController extends Controller
